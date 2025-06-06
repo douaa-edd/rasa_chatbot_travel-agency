@@ -17,7 +17,7 @@ A smart Arabic-speaking travel assistant chatbot built with [Rasa](https://rasa.
 - Rasa (NLU + Core)
 - TensorFlow (Rasa-compatible version)
 - HTML (for embedding the chatbot)
-- Custom actions (API call simulation)
+
 
 ## 🔧 Setup & Usage
 
