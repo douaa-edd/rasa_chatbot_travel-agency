@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-ville_depart",
+      "2": "I-ville_depart",
+      "3": "L-ville_depart",
+      "4": "U-ville_depart",
+      "5": "B-ville_destination",
+      "6": "I-ville_destination",
+      "7": "L-ville_destination",
+      "8": "U-ville_destination",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-ville_depart": 1,
+      "I-ville_depart": 2,
+      "L-ville_depart": 3,
+      "U-ville_depart": 4,
+      "B-ville_destination": 5,
+      "I-ville_destination": 6,
+      "L-ville_destination": 7,
+      "U-ville_destination": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

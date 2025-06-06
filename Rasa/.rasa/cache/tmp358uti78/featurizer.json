@@ -1,0 +1,62 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "book_flight": 2,
+        "change_option": 3,
+        "confirm_reservation": 4,
+        "deny": 5,
+        "goodbye": 6,
+        "greet": 7,
+        "inform": 8,
+        "nlu_fallback": 9,
+        "out_of_scope": 10,
+        "restart": 11,
+        "session_start": 12
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_ask_ville_depart": 13,
+        "utter_ask_ville_destination": 14,
+        "utter_flight_summary": 15,
+        "utter_goodbye": 16,
+        "utter_greet": 17,
+        "flight_form": 18
+      },
+      "entities": {
+        "ville_depart": 0,
+        "ville_destination": 1
+      },
+      "slots": {
+        "ville_depart_0": 0,
+        "ville_destination_0": 1,
+        "date_depart_0": 2,
+        "date_retour_0": 3,
+        "classe_0": 4,
+        "type_vol_0": 5
+      },
+      "active_loop": {
+        "flight_form": 0
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

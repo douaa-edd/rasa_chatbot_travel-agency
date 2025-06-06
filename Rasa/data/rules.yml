@@ -1,0 +1,83 @@
+version: "3.1"
+
+rules:
+
+
+- rule: Greet rule
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Goodbye rule
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Start flight form
+  steps:
+  - intent: book_flight
+  - action: flight_form
+  - active_loop: flight_form
+
+- rule: Submit flight form
+  condition:
+  - active_loop: flight_form
+  steps:
+  - action: flight_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: flight_search
+
+- rule: Start hotel form
+  steps:
+  - intent: book_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: Submit hotel form
+  condition:
+  - active_loop: hotel_form
+  steps:
+  - action: hotel_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: hotel_search
+
+- rule: Select option
+  steps:
+  - intent: select_option
+  - action: select_option
+
+- rule: Confirm reservation opt1
+  condition:
+  - slot_was_set:
+    - selected_option: "1"
+  steps:
+  - intent: confirm_reservation
+  - action: confirm_booking
+
+- rule: Confirm reservation opt2
+  condition:
+  - slot_was_set:
+    - selected_option: "2"  
+  steps:
+  - intent: confirm_reservation
+  - action: confirm_booking
+
+- rule: Confirm with confirm intent opt1
+  condition:
+  - slot_was_set:
+    - selected_option: "1"
+  steps:
+  - intent: confirm
+  - action: confirm_booking
+
+- rule: Confirm with confirm intent opt2
+  condition:
+  - slot_was_set:
+    - selected_option: "2"
+  steps:
+  - intent: confirm
+  - action: confirm_booking

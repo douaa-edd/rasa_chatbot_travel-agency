@@ -1,0 +1,64 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "book_flight": 1,
+        "book_hotel": 2,
+        "change_option": 3,
+        "confirm_reservation": 4,
+        "nlu_fallback": 5,
+        "out_of_scope": 6,
+        "restart": 7,
+        "select_option": 8,
+        "session_start": 9
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_book_flight": 13,
+        "confirm_booking": 14,
+        "utter_confirm_reservation": 15
+      },
+      "entities": {
+        "catégorie": 0,
+        "classe": 1,
+        "date_depart": 2,
+        "date_retour": 3,
+        "nombre_personnes": 4,
+        "quartier": 5,
+        "type": 6,
+        "ville_depart": 7,
+        "ville_destination": 8
+      },
+      "slots": {
+        "ville_depart_0": 0,
+        "ville_destination_0": 1,
+        "date_depart_0": 2,
+        "date_retour_0": 3,
+        "classe_0": 4,
+        "type_0": 5,
+        "catégorie_0": 6,
+        "quartier_0": 7,
+        "nombre_personnes_0": 8
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

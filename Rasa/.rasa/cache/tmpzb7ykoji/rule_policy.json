@@ -1,0 +1,50 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"book_hotel\"}}]": "hotel_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"book_hotel\"}}, {\"active_loop\": {\"name\": \"hotel_form\"}, \"prev_action\": {\"action_name\": \"hotel_form\"}, \"user\": {\"intent\": \"book_hotel\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"flight_form\"}}]": "flight_search",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"flight_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"flight_search\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"book_flight\"}}]": "flight_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"book_flight\"}}, {\"active_loop\": {\"name\": \"flight_form\"}, \"prev_action\": {\"action_name\": \"flight_form\"}, \"user\": {\"intent\": \"book_flight\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"select_option\"}}]": "select_option",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"select_option\"}}, {\"prev_action\": {\"action_name\": \"select_option\"}, \"user\": {\"intent\": \"select_option\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}]": "confirm_booking",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"confirm_booking\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"hotel_form\"}}]": "hotel_search",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"hotel_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"hotel_search\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}]": "confirm_booking",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}, {\"prev_action\": {\"action_name\": \"confirm_booking\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}]": "action_listen"
+    },
+    "rule_only_slots": [
+      "selected_option"
+    ],
+    "rule_only_loops": [
+      "hotel_form",
+      "flight_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"hotel_form\"}, \"prev_action\": {\"action_name\": \"hotel_form\"}, \"user\": {\"intent\": \"book_hotel\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"flight_form\"}, \"prev_action\": {\"action_name\": \"flight_form\"}, \"user\": {\"intent\": \"book_flight\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}]",
+      "handling active loops and forms - hotel_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}, {\"prev_action\": {\"action_name\": \"confirm_booking\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}]",
+      "handling active loops and forms - flight_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"confirm_booking\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"select_option\"}}, {\"prev_action\": {\"action_name\": \"select_option\"}, \"user\": {\"intent\": \"select_option\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"select_option\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"selected_option\": [1.0]}, \"user\": {\"intent\": \"confirm_reservation\"}}]",
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart",
+      "handling active loops and forms - hotel_form",
+      "handling active loops and forms - flight_form"
+    ]
+  }
+}

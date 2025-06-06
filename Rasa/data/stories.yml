@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+
+- story: flight booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_flight
+  - action: flight_form
+  - active_loop: flight_form
+  - active_loop: null
+  - action: flight_search
+
+- story: hotel booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+  - active_loop: null
+  - action: hotel_search
+
+- story: flight booking edit
+  steps:
+  - intent: book_flight
+  - action: flight_form
+  - active_loop: flight_form
+  - active_loop: null
+  - action: flight_search
+  - intent: change_option
+  - action: edit_option
+
+- story: hotel booking edit
+  steps:
+  - intent: book_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+  - active_loop: null
+  - action: hotel_search
+  - intent: change_option
+  - action: edit_option
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye

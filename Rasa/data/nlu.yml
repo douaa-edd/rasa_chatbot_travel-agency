@@ -1,0 +1,233 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - مرحبا
+    - أهلا
+    - صباح الخير
+    - مساء الخير
+    - السلام عليكم
+    - أهلا وسهلا
+    - مرحبا بك
+    - hello
+
+- intent: goodbye
+  examples: |
+    - مع السلامة
+    - إلى اللقاء
+    - وداعًا
+    - شكرًا لك
+    - أراك لاحقًا
+    - أتمنى لك يومًا سعيدًا
+    - شكرًا على المساعدة
+    - أشكرك 
+    - goodbye
+    - bye
+
+- intent: confirm
+  examples: |
+    - نعم
+    - أوافق
+    - موافق
+    - أجل
+    - حسناً
+    - بالتأكيد
+    - طبعًا
+    - أؤكد ذلك
+    - أريد المتابعة
+    - أرغب في الاستمرار
+    - حسنًا، تابع
+    - نعم، تابع
+    - نعم، أريد ذلك
+    - نعم، أكمل
+    - نعم من فضلك
+    - yes
+    - ok
+
+    
+
+- intent: confirm_reservation
+  examples: |
+    - أريد تأكيد الحجز
+    - أؤكد الحجز
+    - نعم، احجز الآن
+    - تأكيد الحجز
+    - أوافق على الحجز
+    - نعم أؤكد الحجز
+    - أتمم الحجز من فضلك
+    - نعم، أريد متابعة الحجز
+    - أكد الحجز
+    - موافق على الحجز
+    - احجز لي من فضلك
+    - أوافق
+    - تأكيد
+    - أريد المتابعة وإتمام الحجز
+    - أؤكد
+    - نعم احجز
+    - نعم، أكمل الحجز
+    - بالتأكيد، قم بالحجز
+    - أنهي الحجز الآن
+
+- intent: refuse
+  examples: |
+    - لا
+    - لا، شكراً
+    - لا أوافق
+    - لا أرغب في ذلك
+    - هذا غير مناسب
+    - لا يناسبني العرض
+    - لا أريد الاستمرار
+    - أريد التراجع
+    - لا، أود التغيير
+    - أرفض هذا الخيار
+    - لا أريد الحجز
+    - أريد إلغاء العملية
+    - أود الإلغاء
+    - لا هذا الخيار
+    - ليس هذا ما أبحث عنه
+
+
+- intent: book_flight
+  examples: |
+    - أرغب في حجز رحلة من [مراكش](ville_depart) إلى [باريس](ville_destination)
+    - أود السفر من [الدار البيضاء](ville_depart) نحو [لندن](ville_destination) في شهر [فبراير](date_depart)
+    - أبحث عن رحلة من [الرباط](ville_depart) إلى [روما](ville_destination) بتاريخ [20 سبتمبر](date_depart)
+    - أبحث عن تذكرة [درجة أعمال](classe) من [طنجة](ville_depart) إلى [برشلونة](ville_destination)
+    - أريد القيام بحجز طيران
+    - أرغب في القيام برحلة
+    - أريد رحلة [ذهاب فقط](type_vol)
+    - أبحث عن رحلة [ذهاب وإياب](type_vol)
+    - أريد تذكرة [اقتصادية](classe)
+    - أود الحجز في [درجة أولى](classe)
+
+    
+
+- intent: book_hotel
+  examples: |
+    - أود حجز فندق في [الدار البيضاء](ville_hotel)
+    - أبحث عن إقامة في [فاس](ville_hotel) لـ [شخصين](nombre_personnes)
+    - أحتاج إلى فندق [3 نجوم](categorie_hotel) في [طنجة](ville_hotel)
+    - هل يمكنك إيجاد فندق في [مراكش](ville_hotel)؟
+    - أرغب في حجز فندق [4 نجوم](categorie_hotel)
+    - أريد إقامة مريحة في [أكادير](ville_hotel)
+    - فندق [5 نجوم](categorie_hotel) لـ [أربعة أشخاص](nombre_personnes)
+    - أحتاج إلى مكان إقامة
+    - هل هناك فنادق متاحة في [الرباط](ville_hotel)؟
+    - حجز فندق لعائلة مكونة من [3 أشخاص](nombre_personnes)
+    - أريد غرفة فندقية فاخرة
+    - إقامة في [مدينة تطوان](ville_hotel)
+
+    
+- intent: select_option
+  examples: |
+    - أختار الأول
+    - أختار الثاني
+    - الخيار الأول
+    - الخيار الثاني  
+    - اختار هذا الخيار
+    - هذا جيد
+    - الخيار رقم 1
+    - الخيار رقم 2
+    - الأول
+    - الثاني
+    - أوافق على هذا
+    - هذا الخيار مناسب
+    - نعم هذا مناسب
+    - موافق
+    - تمام
+    - حسناً
+    
+    
+- intent: change_option
+  examples: |
+    - أريد تغيير الخيار
+    - لا أريد هذا
+    - أريد التغيير
+    - أريد شيء آخر
+    - تغيير التاريخ
+    - تغيير المدينة
+    - خيارات أخرى
+
+    
+- intent: inform
+  examples: |
+    - [مراكش](ville_depart)
+    - [مراكش](ville_destination)
+    - [مراكش](ville_hotel)
+    - [الرباط](ville_depart)
+    - [الرباط](ville_destination)
+    - [الرباط](ville_hotel)
+    - [الدار البيضاء](ville_depart)
+    - [الدار البيضاء](ville_destination)
+    - [الدار البيضاء](ville_hotel)
+    - [الدارالبيضاء](ville_depart)
+    - [الدارالبيضاء](ville_destination)
+    - [الدارالبيضاء](ville_hotel)
+    - [طنجة](ville_depart)
+    - [طنجة](ville_destination)
+    - [طنجة](ville_hotel)
+    - [فاس](ville_depart)
+    - [فاس](ville_destination)
+    - [فاس](ville_hotel)
+    - [أكادير](ville_depart)
+    - [أكادير](ville_destination)
+    - [أكادير](ville_hotel)
+    - [باريس](ville_destination)
+    - [لندن](ville_destination)
+    - [برشلونة](ville_destination)
+    - [روما](ville_destination)
+    - [10 فبراير](date_depart)
+    - [20 سبتمبر](date_retour)
+    - [اقتصادية](classe)
+    - [أعمال](classe)
+    - [أولى](classe)
+    - [5 نجوم](categorie_hotel)
+    - [4 نجوم](categorie_hotel)
+    - [3 نجوم](categorie_hotel)
+    - [شخصين](nombre_personnes)
+    - [شخص واحد](nombre_personnes)
+    - [3 أشخاص](nombre_personnes)
+
+- synonym: اقتصادية
+  examples: |
+    - عادية
+    - درجة اقتصادية
+    - economy
+    
+- synonym: أعمال
+  examples: |
+    - درجة أعمال
+    - business
+    
+- synonym: أولى
+  examples: |
+    - درجة أولى
+    - first class
+    
+- regex: date
+  examples: |
+    - \d{1,2} (يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)
+    - \d{1,2}/\d{1,2}/\d{4}
+    
+
+- lookup: moroccan_cities
+  examples: |
+    - مراكش
+    - الرباط
+    - الدار البيضاء
+    - طنجة
+    - فاس
+    - مكناس
+    - أكادير
+    - المحمدية
+    - الجديدة
+    - وجدة
+    - تطوان
+    - الحسيمة
+    - سلا
+    - القنيطرة
+    - تمارة
+    - بني ملال
+    - العيون
+    - الداخلة
