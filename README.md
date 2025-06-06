@@ -9,14 +9,14 @@ A smart Arabic-speaking travel assistant chatbot built with [Rasa](https://rasa.
 - Confirm or modify reservations
 - Arabic language support (NLU + dialogue)
 - Suggest travel options based on user input
-- Deployed on a local website with web chat
+- Deployed on a local interface with web chat
 
 ## 🛠️ Tech Stack
 
 - Python 3.8+
 - Rasa (NLU + Core)
 - TensorFlow (Rasa-compatible version)
-- HTML/JS (for embedding the chatbot)
+- HTML (for embedding the chatbot)
 - Custom actions (API call simulation)
 
 ## 🔧 Setup & Usage
